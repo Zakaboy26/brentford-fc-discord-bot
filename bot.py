@@ -12,7 +12,10 @@ FOOTBALL_API_KEY = os.getenv("FOOTBALL_API_KEY")
 BRENTFORD_ID = 402
 PREMIER_LEAGUE_ID = 2021
 
-bot = commands.Bot(command_prefix="!", intents=discord.Intents.default())
+intents = discord.Intents.default()
+intents.message_content = True
+
+bot = commands.Bot(command_prefix="!", intents=intents)
 
 API_BASE = "https://api.football-data.org/v4"
 HEADERS = {"X-Auth-Token": FOOTBALL_API_KEY}
